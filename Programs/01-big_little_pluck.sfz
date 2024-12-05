@@ -1,0 +1,161 @@
+//Black bass from Black And Blue Basses sampled yet again
+//This time (mostly) from the 12th to the 18th fret
+//So effectively like a ukulele-scale bass with a huge body and huge non-speaking string length
+
+//There's not much to it, really
+
+<control>
+label_cc21=Vibrato Depth
+label_cc24=Swell
+label_cc25=Preroll
+label_cc90=Filter Cutoff
+label_cc91=F Resonance
+label_cc92=F Veltrack
+label_cc93=F Envelope
+label_cc94=F Attack
+label_cc95=F Decay
+label_cc100=Unison Vol
+label_cc101=Unison Width
+label_cc105=Mono Switch
+label_cc107=Release
+label_cc112=Vibrato Speed
+label_cc113=Wobble Depth
+label_cc114=Tremolo Depth
+label_cc115=Vibrato Delay
+label_cc116=Vibrato Fade
+label_cc117=Humanize
+
+set_cc90=127
+set_cc95=40
+set_cc101=127
+set_cc107=25
+set_cc112=50
+set_cc115=45
+set_cc116=45
+
+<global>
+#include "controls/common.sfz"
+#include "controls/filter.sfz"
+
+//Center
+//Poly
+<master>
+hivel=63
+amp_velcurve_63=1
+hicc105=63
+seq_length=5
+#include "controls/b_vibrato.sfz"
+#include "maps/p_map.sfz"
+<master>
+lovel=64
+hicc105=63
+seq_length=5
+#include "controls/b_vibrato.sfz"
+#include "maps/f_map.sfz"
+
+//Mono
+<master>
+hivel=63
+amp_velcurve_63=1
+locc105=64
+group=1
+off_by=1
+seq_length=5
+#include "controls/b_vibrato.sfz"
+#include "maps/p_map.sfz"
+<master>
+lovel=64
+locc105=64
+group=1
+off_by=1
+seq_length=5
+#include "controls/b_vibrato.sfz"
+#include "maps/f_map.sfz"
+
+//Left
+//Poly
+<master>
+#include "controls/unison.sfz"
+pan_cc101=-100
+hivel=63
+amp_velcurve_63=1
+hicc105=63
+seq_length=4
+#include "controls/b_t2_vibrato.sfz"
+#include "maps/t1/p_map.sfz"
+<master>
+#include "controls/unison.sfz"
+pan_cc101=-100
+lovel=64
+hicc105=63
+seq_length=4
+#include "controls/b_t2_vibrato.sfz"
+#include "maps/t1/f_map.sfz"
+
+//Mono
+<master>
+#include "controls/unison.sfz"
+pan_cc101=-100
+hivel=63
+amp_velcurve_63=1
+locc105=64
+group=2
+off_by=2
+seq_length=4
+#include "controls/b_t2_vibrato.sfz"
+#include "maps/t1/p_map.sfz"
+<master>
+#include "controls/unison.sfz"
+pan_cc101=-100
+lovel=64
+locc105=64
+group=2
+off_by=2
+seq_length=4
+#include "controls/b_t2_vibrato.sfz"
+#include "maps/t1/f_map.sfz"
+
+//Right
+//Poly
+<master>
+#include "controls/unison.sfz"
+pan_cc101=100
+hivel=63
+amp_velcurve_63=1
+hicc105=63
+seq_length=4
+#include "controls/b_t1_vibrato.sfz"
+#include "maps/t2/p_map.sfz"
+<master>
+#include "controls/unison.sfz"
+pan_cc101=100
+lovel=64
+hicc105=63
+seq_length=4
+#include "controls/b_t1_vibrato.sfz"
+#include "maps/t2/f_map.sfz"
+
+//Mono
+<master>
+#include "controls/unison.sfz"
+pan_cc101=100
+hivel=63
+amp_velcurve_63=1
+locc105=64
+group=3
+off_by=3
+seq_length=4
+#include "controls/b_t1_vibrato.sfz"
+#include "maps/t2/p_map.sfz"
+<master>
+#include "controls/unison.sfz"
+pan_cc101=100
+lovel=64
+locc105=64
+group=3
+off_by=3
+seq_length=4
+#include "controls/b_t1_vibrato.sfz"
+#include "maps/t2/f_map.sfz"
+
+#include "controls/curves.sfz"

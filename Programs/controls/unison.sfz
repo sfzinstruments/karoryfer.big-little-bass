@@ -1,0 +1,4 @@
+locc100=1
+amplitude_cc100=100
+fil2_type=hpf_2p
+cutoff2=400 //Pretty high

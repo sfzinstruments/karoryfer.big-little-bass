@@ -1,0 +1,18 @@
+Bass freebie.
+
+Beta 0.901:
+Release control works.
+Soft patch controls now show up.
+GUI front page pic now shows up.
+
+Beta 0.900:
+Initial beta with XML bank and GUI.
+Readme and license files added.
+
+Alpha 0.200:
+Round robins work now.
+Controls and unison added. Basically same as Black and Blue Basses.
+Big Little Bass name.
+
+Alpha 0.100:
+Initial release. All samples in place, no controls yet.
